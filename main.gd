@@ -19,7 +19,7 @@ func get_actor_from_id(id):
 
 func _physics_process(dt):
 	var playerData = get_node_or_null("/root/PlayerData")
-	if not playerData or not PlayerAPI.local_player:
+	if not is_instance_valid(playerData) or not is_instance_valid(PlayerAPI.local_player):
 		return
 	
 	var player = PlayerAPI.local_player
